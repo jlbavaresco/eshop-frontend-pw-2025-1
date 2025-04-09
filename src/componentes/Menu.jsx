@@ -16,6 +16,7 @@ function Menu() {
                             <NavLink className="nav-link active" aria-current="page" exact="true" to="/">Home</NavLink>
                             <NavDropdown title="Manutenções" id="basic-nav-dropdown">
                                 <NavLink className="dropdown-item" exact="true" to="categorias">Categorias</NavLink>
+                                <NavLink className="dropdown-item" exact="true" to="produtos">Produto</NavLink>
                             </NavDropdown>
                             <NavLink className="nav-link active" aria-current="page" exact="true" to="/sobre">Sobre...</NavLink>
                         </Nav>
