@@ -1,9 +1,12 @@
+import { getToken } from '../seguranca/Autenticacao';
+
 export const getCategoriasAPI = async () => {
     const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/categoria`,
         {
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                 "authorization": getToken()
             }
         })
     const data = await response.json()
@@ -15,7 +18,8 @@ export const getCategoriaPorCodigoAPI = async codigo => {
         {
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                 "authorization": getToken()
             }
         });
     const data = await response.json();
@@ -27,7 +31,9 @@ export const deleteCategoriaPorCodigoAPI = async codigo => {
         {
             method: "DELETE",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                 "authorization": getToken()
+
             }
         });
     const data = await response.json();
@@ -37,7 +43,8 @@ export const deleteCategoriaPorCodigoAPI = async codigo => {
 export const cadastraCategoriaAPI = async (objeto, metodo) => {
     const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/categoria`, {
         method: metodo,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+                 "authorization": getToken() },
         body: JSON.stringify(objeto),
     })
     const data = await response.json();
